@@ -25,10 +25,11 @@ class MainActivity : AppCompatActivity() {
 
 
         listView.setOnItemClickListener { parent, view, position, id ->
-            val text = listView.getItemAtPosition(position).toString()
+            var text = listView.getItemAtPosition(position).toString()
             deleteBtn.setOnClickListener {
                 adapter.remove(text)
                 Toast.makeText(this, "$text was deleted", Toast.LENGTH_LONG)
+                text = null.toString()
             }
 
 
